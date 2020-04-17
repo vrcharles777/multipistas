@@ -1,0 +1,201 @@
+body {
+	background: rgb(240, 236, 235); color: rgb(136, 136, 136);
+}
+#app {
+	margin: auto; width: 980px;
+}
+.container {
+	max-width: 1280px;
+}
+.flex {
+	display: flex; flex-wrap: wrap;
+}
+header {
+	margin-bottom: 1rem; border-bottom-color: rgb(177, 0, 0); border-bottom-width: 4px; border-bottom-style: solid;
+}
+.logo {
+	margin: 1rem 0px; width: 200px;
+}
+#console {
+	background: black; border: 1px solid rgb(171, 171, 171); border-image: none; width: calc(1280px/3); text-align: center; color: white; margin-bottom: 1rem; z-index: 10;
+}
+#waveCanvas {
+	width: 425px; height: 80px; overflow: auto; white-space: nowrap; -ms-overflow-x: hidden;
+}
+#messages {
+	height: 75px; overflow: auto; white-space: nowrap; -ms-overflow-x: hidden;
+}
+#help {
+	margin: 0px 12px; height: 75px; text-align: left;
+}
+#masterTools {
+	background: rgb(28, 28, 28); padding: 1rem; text-align: center;
+}
+#volume {
+	height: 42px;
+}
+.transport-buttons {
+	margin-left: 20px; float: left;
+}
+#tracks {
+	width: 100%; margin-top: -1px;
+}
+.trackBox {
+	vertical-align: top;
+}
+#myCanvas {
+	background: rgb(51, 51, 51);
+}
+#scroll {
+	background: rgb(28, 28, 28); padding: 1em; border: 1px solid rgb(102, 102, 102); border-image: none;
+}
+#credit {
+	margin: 1em; width: 100%; text-align: right; font-size: 0.8em;
+}
+#credit p {
+	margin: 0px;
+}
+.styled-select select {
+	background: rgb(73, 73, 73); border-radius: 0px; border: currentColor; border-image: none; width: 250px; height: 37px; color: rgb(255, 255, 255); font-size: 16px; -webkit-appearance: none;
+}
+.styled-select select:hover {
+	background: rgb(92, 92, 92);
+}
+.styled-select {
+	width: 250px; height: 37px;
+}
+.btn {
+	border: currentColor; border-image: none; box-shadow: none;
+}
+.btn:focus {
+	
+}
+[disabled].btn {
+	opacity: 1;
+}
+button {
+	width: 38px; height: 37px;
+}
+#bplay {
+	background: url("../img/MT5_Play_On.jpg");
+}
+[disabled].btn#bplay {
+	background: url("../img/MT5_Play_Off.jpg");
+}
+#bplay:hover {
+	-webkit-filter: brightness(150%); -moz-filter: brightness(150%); -o-filter: brightness(150%);
+}
+[disabled].btn#bplay:hover {
+	filter: none; -webkit-filter: none; -moz-filter: none; -o-filter: none;
+}
+#bpause {
+	background: url("../img/MT5_Pause_On.jpg");
+}
+[disabled].btn#bpause {
+	background: url("../img/MT5_Pause_Off.jpg");
+}
+#bpause:hover {
+	-webkit-filter: brightness(150%); -moz-filter: brightness(150%); -o-filter: brightness(150%);
+}
+[disabled].btn#bpause:hover {
+	filter: none; -webkit-filter: none; -moz-filter: none; -o-filter: none;
+}
+#bstop {
+	background: url("../img/MT5_Stop_On.jpg");
+}
+[disabled].btn#bstop {
+	background: url("../img/MT5_Stop_Off.jpg");
+}
+#bstop:hover {
+	-webkit-filter: brightness(150%); -moz-filter: brightness(150%); -o-filter: brightness(150%);
+}
+[disabled].btn#bstop:hover {
+	filter: none; -webkit-filter: none; -moz-filter: none; -o-filter: none;
+}
+#sound {
+	margin-top: 28px; margin-left: 28px; position: absolute;
+}
+.nav-tabs {
+	background: rgb(87, 87, 87); border-radius: 0px; border: 0px solid transparent; border-image: none; padding-bottom: 1px; margin-bottom: 1rem;
+}
+.nav-tabs > li > a {
+	background: rgb(87, 87, 87); margin: 0px; padding: 2px 27px; border-radius: 0px; border: 0px solid transparent; border-image: none; color: rgb(255, 255, 255);
+}
+.nav > li > a:hover {
+	background: rgb(110, 110, 110); border: 0px solid transparent; border-image: none; color: rgb(255, 255, 255);
+}
+.nav-tabs > .active > a {
+	background: rgb(177, 0, 0); border: 0px solid transparent; border-image: none; color: rgb(255, 255, 255); cursor: default;
+}
+.nav-tabs > .active > a:hover {
+	background: rgb(177, 0, 0); border: 0px solid transparent; border-image: none; color: rgb(255, 255, 255); cursor: default;
+}
+.nav-tabs > .active > a:focus {
+	background: rgb(177, 0, 0); border: 0px solid transparent; border-image: none; color: rgb(255, 255, 255); cursor: default;
+}
+a[data-toggle=tab] {
+	color: rgb(238, 238, 238); text-decoration: none;
+}
+.pisteProgress {
+	display: none;
+}
+.knobDiv {
+	float: right;
+}
+.volumeSlider {
+	width: 170px;
+}
+.touch {
+	width: 40%;
+}
+.custom {
+	border-radius: 8px; border: 1px solid rgb(171, 171, 171); transition:background 450ms; border-image: none; width: 100%; height: 16px; background-image: linear-gradient(to right, rgb(171, 171, 171) 100%, rgb(73, 73, 73) 0%); -webkit-appearance: none;
+}
+output {
+	width: 100px; height: 40px; font-size: 2em;
+}
+.trackDiv {
+	height: 68px; position: relative;
+}
+.trackTitleDiv {
+	position: absolute;
+}
+.volumeDiv {
+	width: 260px; margin-top: 24px; margin-right: 36px; margin-left: 36px; float: right;
+}
+.track-name {
+	color: rgb(255, 255, 255); font-size: 1.1em; margin-left: 20px; display: inline;
+}
+.track-name-no-link {
+	color: rgb(255, 255, 255); font-size: 1.1em; margin-left: 20px; display: inline;
+}
+.track-name:hover {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+.track-name:focus {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+.muteSoloButtons {
+	width: 20px; height: 68px; margin-top: 1px; float: right;
+}
+.mute {
+	margin: 0px; padding: 0px; border: currentColor; border-image: none; width: 20px; height: 34px;
+}
+.solo {
+	margin: 0px; padding: 0px; border: currentColor; border-image: none; width: 20px; height: 34px;
+}
+.mute img {
+	margin: 0px; padding: 0px; border: currentColor; border-image: none; width: 20px; height: 34px; vertical-align: 0px;
+}
+.solo img {
+	margin: 0px; padding: 0px; border: currentColor; border-image: none; width: 20px; height: 34px; vertical-align: 0px;
+}
+.mute:hover {
+	-webkit-filter: brightness(150%); -moz-filter: brightness(150%); -o-filter: brightness(150%);
+}
+.solo:hover {
+	-webkit-filter: brightness(150%); -moz-filter: brightness(150%); -o-filter: brightness(150%);
+}
+.display-none {
+	display: none;
+}
