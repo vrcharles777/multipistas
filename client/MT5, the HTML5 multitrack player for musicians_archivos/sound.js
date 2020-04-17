@@ -379,7 +379,7 @@ function loadSongList() {
         if (songList[0]) {
             $("<option />", {
                 value: "nochoice",
-                text: "Selecciona que multipista quiere oir",
+                text: "<SELECCIONA LA CANCION>",
                 class: "display-none"
             }).appendTo(s);
         }
