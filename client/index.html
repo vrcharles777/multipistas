@@ -102,4 +102,15 @@ created by Michel Buffa.</P></DIV></DIV>
     var options = {};
     $('a.popup').popup(options);
   </SCRIPT>
+
+<SCRIPT>
+var myCanvas = document.getElementById("myCanvas");
+var ctx = myCanvas.getContext("2d");
+var img = new Image();
+img.src = "prueba.png";
+img.onload = function(){
+  ctx.drawImage(img, 0, 0);
+}
+</SCRIPT>
+
  </BODY></HTML>
