@@ -1,44 +1,74 @@
 ﻿<!DOCTYPE HTML>
 <!-- saved from url=(0028)http://nodejs.focusrite.com/ -->
-<HTML><HEAD><META content="IE=11.0000" http-equiv="X-UA-Compatible">
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
    
 <META charset="utf-8">   
-<META http-equiv="X-UA-Compatible" content="chrome=1">   <TITLE>MT5, the HTML5 multitrack player for musicians</TITLE>   
-<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD>
-<BODY onload="init();"><script src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></script> 
+<META http-equiv="X-UA-Compatible" content="chrome=1">   <TITLE>MT5, the HTML5 
+multitrack player for musicians</TITLE>   
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001">
+
+<style>
+/* Estilo para el zoom del 300% en dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    body {
+        zoom: 300%;
+        -moz-transform: scale(3);
+        -webkit-transform: scale(3);
+        -o-transform: scale(3);
+        -ms-transform: scale(3);
+        transform: scale(3);
+    }
+}
+
+/* Estilo para la imagen de fondo */
+body {
+    background-image: url('prueba.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+</style>
+
+</HEAD>
+<BODY onload="init();"><ascript src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></ascript> 
   
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/jquery.min.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/jquery.min.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/bootstrap.min.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/bootstrap.min.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/sessionsData.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/sessionsData.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/whichSession.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/whichSession.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/view.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/view.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/waveformDrawer.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/waveformDrawer.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/track.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/track.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/song.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/song.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/buffer-loader.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/buffer-loader.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/sound.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/sound.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/jquery.knob.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/jquery.knob.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/knob.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/knob.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/utils.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/utils.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/canvasArrows.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/canvasArrows.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/range-touch.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/range-touch.js"></SCRIPT>
    
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/recorder.js"></script>
-   <link href="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/bootstrap.min.css" rel="stylesheet" type="text/css">   <link href="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/bootstrap-glyphicons.css" rel="stylesheet">   <link href="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/style.css" rel="stylesheet" type="text/css">   <link href="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/popup.css" rel="stylesheet">
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/recorder.js"></SCRIPT>
+   <LINK href="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/bootstrap.min.css" 
+rel="stylesheet" type="text/css">   <LINK href="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/bootstrap-glyphicons.css" 
+rel="stylesheet">   <LINK href="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/style.css" 
+rel="stylesheet" type="text/css">   <LINK href="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/popup.css" 
+rel="stylesheet">
 <DIV id="app">
 <DIV id="console">
 <UL class="nav nav-tabs">
@@ -90,21 +120,14 @@ id="myCanvas"></CANVAS>             <CANVAS id="frontCanvas" style="left: 0px; t
 rel="nofollow">https://github.com/squallooo/MT5</A>)            originally 
 created by Michel Buffa.</P></DIV></DIV>
 <DIV id="trackInfos" style="display: none;"></DIV></DIV></DIV>
-<script src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/jquery.popup.min.js"></script>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/jquery.popup.min.js"></SCRIPT>
    
-<script type="text/javascript">
+<SCRIPT type="text/javascript">
     var options = {};
     $('a.popup').popup(options);
-  </script>
+  </SCRIPT>
 
-<script>
-// Verificar si el dispositivo es móvil y establecer el zoom al 300%
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-  document.querySelector('meta[name=viewport]').setAttribute('content', 'width=device-width, initial-scale=3.0, maximum-scale=3.0, user-scalable=0');
-}
-</script>
-
-<script>
+<SCRIPT>
 var myCanvas = document.getElementById("myCanvas");
 var ctx = myCanvas.getContext("2d");
 var img = new Image();
@@ -112,6 +135,6 @@ img.src = "prueba.png";
 img.onload = function(){
   ctx.drawImage(img, 0, 0);
 }
-</script>
+</SCRIPT>
 
  </BODY></HTML>
