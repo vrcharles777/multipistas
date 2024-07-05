@@ -94,7 +94,7 @@
             </DIV>
           </DIV>
           <DIV id="credit">
-            <P>Based on the MT5 Player (<A href="https://github.com/squallooo/MT5" target="_blank" rel="nofollow">https://github.com/squallooo/MT5</A>) originally created by Michel Buffa.</P>
+            <P>Based on the MT5 Player (<A href="https://github.com/squallooo/MT5" target="_blank" rel="nofollow">https://github.com/squallooo/MT5</A>) originalmente creado por Michel Buffa.</P>
           </DIV>
         </DIV>
         <DIV id="trackInfos" style="display: none;"></DIV>
@@ -109,10 +109,15 @@
     <SCRIPT>
       // Función para desplegar el menú del recuadro que alberga a songSelect después de 4 segundos
       setTimeout(function() {
-        var songSelect = document.querySelector('.styled-select#songs');
+        var songSelect = document.querySelector('.styled-select#songs select');
         if (songSelect) {
-          // Simular un clic para desplegar las opciones del menú
-          songSelect.click();
+          // Crear y despachar el evento 'mousedown' para simular un clic
+          var event = new MouseEvent('mousedown', {
+            'view': window,
+            'bubbles': true,
+            'cancelable': true
+          });
+          songSelect.dispatchEvent(event);
         }
       }, 4000);
     </SCRIPT>
