@@ -1,37 +1,12 @@
 ﻿<!DOCTYPE HTML>
 <!-- saved from url=(0028)http://nodejs.focusrite.com/ -->
-<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content="IE=11.0000" 
-http-equiv="X-UA-Compatible">
+<HTML><HEAD><META content="IE=11.0000" http-equiv="X-UA-Compatible">
    
 <META charset="utf-8">   
-<META http-equiv="X-UA-Compatible" content="chrome=1">   <TITLE>MT5, the HTML5 
-multitrack player for musicians</TITLE>   
-<META name="GENERATOR" content="MSHTML 11.00.10570.1001">
-
-<style>
-/* Estilo para el zoom del 300% en dispositivos móviles */
-@media only screen and (max-width: 768px) {
-    body {
-        zoom: 300%;
-        -moz-transform: scale(3);
-        -webkit-transform: scale(3);
-        -o-transform: scale(3);
-        -ms-transform: scale(3);
-        transform: scale(3);
-    }
-}
-
-/* Estilo para la imagen de fondo */
-body {
-    background-image: url('prueba.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-</style>
-
-</HEAD>
-<BODY onload="init();"><ascript src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></ascript> 
+<META http-equiv="X-UA-Compatible" content="chrome=1">   
+<TITLE>MT5, the HTML5 multitrack player for musicians</TITLE>   
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD>
+<BODY onload="init();"><SCRIPT src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></SCRIPT> 
   
 <SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/jquery.min.js"></SCRIPT>
    
@@ -125,9 +100,15 @@ created by Michel Buffa.</P></DIV></DIV>
 <SCRIPT type="text/javascript">
     var options = {};
     $('a.popup').popup(options);
-  </SCRIPT>
+</SCRIPT>
 
 <SCRIPT>
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+    document.body.classList.add('zoomed');
+  }, 4000); // 4000 milisegundos = 4 segundos
+});
+
 var myCanvas = document.getElementById("myCanvas");
 var ctx = myCanvas.getContext("2d");
 var img = new Image();
@@ -137,4 +118,5 @@ img.onload = function(){
 }
 </SCRIPT>
 
- </BODY></HTML>
+</BODY>
+</HTML>
