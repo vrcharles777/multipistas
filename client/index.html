@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE HTML>
-<!-- saved from url=(0028)http://nodejs.focusrite.com/ -->
 <HTML>
 <HEAD>
     <META content="IE=11.0000" http-equiv="X-UA-Compatible">
@@ -14,11 +13,13 @@
     <STYLE>
         #dropdownContainer {
             display: none;
-            position: absolute;
-            left: 0;
-            top: 0;
             width: 100%;
             height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 999;
         }
     </STYLE>
 </HEAD>
@@ -40,7 +41,6 @@
     <SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/canvasArrows.js"></SCRIPT>
     <SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/range-touch.js"></SCRIPT>
     <SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/recorder.js"></SCRIPT>
-    <SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/jquery.popup.min.js"></SCRIPT>
 
     <DIV id="app">
         <DIV id="console">
@@ -93,7 +93,6 @@
                 <DIV id="canvass">
                     <DIV style="position: relative;">
                         <CANVAS width="580" height="400" id="myCanvas"></CANVAS>
-                        <CANVAS id="frontCanvas" style="left: 0px; top: 0px; position: absolute; z-index: 1;"></CANVAS>
                         <DIV id="dropdownContainer">
                             <select id="dropdownMenu" style="width: 100%; height: 100%;">
                                 <option value="option1">Option 1</option>
@@ -110,26 +109,35 @@
             <DIV id="trackInfos" style="display: none;"></DIV>
         </DIV>
     </DIV>
+    <SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/jquery.popup.min.js"></SCRIPT>
+    <SCRIPT type="text/javascript">
+        $(document).ready(function() {
+            var options = {};
+            $('a.popup').popup(options);
 
-    <SCRIPT>
-        var options = {};
-        $('a.popup').popup(options);
+            var myCanvas = document.getElementById("myCanvas");
+            var ctx = myCanvas.getContext("2d");
+            var img = new Image();
+            img.src = "prueba.png";
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0);
+            };
 
-        var myCanvas = document.getElementById("myCanvas");
-        var dropdownMenu = document.getElementById("dropdownMenu");
+            // Toggle dropdown on canvas click
+            myCanvas.addEventListener('click', function() {
+                var dropdownContainer = document.getElementById('dropdownContainer');
+                //var dropdownMenu = document.getElementById('dropdownMenu');
 
-        myCanvas.addEventListener('click', function() {
-            // Simulamos el clic en el enlace del menú desplegable
-            document.getElementById('waveTab').click();
+                if (dropdownContainer.style.display === 'none') {
+                    dropdownContainer.style.display = 'block';
+                } else {
+                    dropdownContainer.style.display = 'none';
+                }
+
+                // Simulate click on dropdown menu
+                //dropdownMenu.click();
+            });
         });
-
-        var ctx = myCanvas.getContext("2d");
-        var img = new Image();
-        img.src = "prueba.png";
-        img.onload = function(){
-            ctx.drawImage(img, 0, 0);
-        };
     </SCRIPT>
-
 </BODY>
 </HTML>
