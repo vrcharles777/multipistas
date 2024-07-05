@@ -1,15 +1,129 @@
-<html>
-    <head>
-        <title>Test</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <script type="text/javascript">
-        function redirect() {
-            window.location = "client/index.html";
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0028)http://nodejs.focusrite.com/ -->
+<!DOCTYPE html PUBLIC "" "">
+<HTML>
+<HEAD>
+    <META content="IE=11.0000" http-equiv="X-UA-Compatible">
+    <META charset="utf-8">   
+    <META http-equiv="X-UA-Compatible" content="chrome=1">   
+    <TITLE>MT5, the HTML5 multitrack player for musicians</TITLE>   
+    <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
+</HEAD>
+<BODY onload="init();">
+<ascript src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></ascript> 
+  
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/jquery.min.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/bootstrap.min.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/sessionsData.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/whichSession.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/view.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/waveformDrawer.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/track.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/song.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/buffer-loader.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/sound.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/jquery.knob.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/knob.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/utils.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/canvasArrows.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/range-touch.js"></SCRIPT>
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/recorder.js"></SCRIPT>
+
+<LINK href="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/bootstrap.min.css" rel="stylesheet" type="text/css">   
+<LINK href="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/bootstrap-glyphicons.css" rel="stylesheet">   
+<LINK href="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/style.css" rel="stylesheet" type="text/css">   
+<LINK href="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/popup.css" rel="stylesheet">
+
+<DIV id="app">
+<DIV id="console">
+    <UL class="nav nav-tabs">
+        <LI><A id="consoleTab" href="http://nodejs.focusrite.com/#home" data-toggle="tab">Console</A></LI>
+        <LI><A id="waveTab" href="http://nodejs.focusrite.com/#profile" data-toggle="tab">Visualiser</A></LI>
+        <LI><A class="active" href="http://nodejs.focusrite.com/#help" data-toggle="tab">Help</A></LI>
+    </UL><!-- Tab panes --> 
+      
+    <DIV class="tab-content">
+        <DIV class="tab-pane fade in " id="home">
+            <DIV id="messages">Please choose a song !</DIV>
+        </DIV>
+        <DIV class="tab-pane fade" id="profile">
+            <CANVAS id="waveCanvas"></CANVAS>        
+        </DIV>
+        <DIV class="tab-pane fade in active" id="help">
+            <P>Each track has independent gain, mute and solo controls.</P>
+            <P>Click on the track waveforms to change position of playback.</P>
+        </DIV>
+    </DIV>
+</DIV>
+
+<DIV id="masterTools">
+    <DIV>
+        <SPAN class="display-none" id="volume">
+            <BUTTON class="btn btn-default btn-lg master" id="bsound" style="right: 0px; margin-top: 28px; margin-right: 28px; position: absolute;" onclick="masterMuteUnmute(this);" type="button">
+                <SPAN class="glyphicon glyphicon-volume-up"></SPAN> 
+            </BUTTON>           
+            <INPUT class="knob masterVolume" id="masterVolume" value="100" data-displayinput="false" data-height="100" data-width="100"> 
+        </SPAN>         
+        <DIV class="main-controls">
+            <DIV class="flex">
+                <DIV class="styled-select" id="songs">
+                    <!-- Aquí añadimos el elemento select -->
+                    <SELECT id="songSelect"></SELECT>
+                </DIV>
+                <DIV class="transport-buttons">
+                    <BUTTON disabled="" class="btn btn-default btn-lg" id="bplay" onclick="playAllTracks(0);" type="button"><!-- <span class="glyphicon glyphicon-play"></span> --> </BUTTON>               
+                    <BUTTON disabled="" class="btn btn-default btn-lg" id="bpause" onclick="pauseAllTracks();" type="button"><!-- <span class="glyphicon glyphicon-pause"></span> --> </BUTTON>               
+                    <BUTTON disabled="" class="btn btn-default btn-lg" id="bstop" onclick="stopAllTracks();" type="button"><!-- <span class="glyphicon glyphicon-stop"></span> --> </BUTTON>               
+                    <BUTTON disabled="" class="btn btn-default btn-lg display-none" id="bstop" onclick="addNewTrackForRecord();" type="button"><SPAN class="glyphicon glyphicon-record"></SPAN> </BUTTON>               
+                    <BUTTON disabled="" class="btn btn-default btn-lg display-none" id="brecordMix" style="padding: 0px; font-size: 10px;" onclick="toggleRecordMix();" type="button">Record mix </BUTTON>             
+                </DIV>
+            </DIV>
+        </DIV>
+    </DIV>
+</DIV>
+
+<DIV id="scroll">
+    <DIV class="flex">
+        <DIV id="trackControl">
+            <TABLE id="tracks"></TABLE>
+        </DIV>
+        <DIV id="canvass">
+            <DIV style="position: relative;">
+                <CANVAS width="580" height="400" id="myCanvas"></CANVAS>             
+                <CANVAS id="frontCanvas" style="left: 0px; top: 0px; position: absolute; z-index: 1;"></CANVAS> 
+            </DIV>
+        </DIV>
+        <DIV id="credit">
+            <P>Based on the MT5 Player (<A href="https://github.com/squallooo/MT5" target="_blank" rel="nofollow">https://github.com/squallooo/MT5</A>) originally created by Michel Buffa.</P>
+        </DIV>
+    </DIV>
+    <DIV id="trackInfos" style="display: none;"></DIV>
+</DIV>
+</DIV>
+
+<SCRIPT src="MT5,%20the%20HTML5%20multitrack%20player%20for%20musicians_archivos/jquery.popup.min.js"></SCRIPT>
+<SCRIPT type="text/javascript">
+    var options = {};
+    $('a.popup').popup(options);
+</SCRIPT>
+
+<SCRIPT>
+    var myCanvas = document.getElementById("myCanvas");
+    var ctx = myCanvas.getContext("2d");
+    var img = new Image();
+    img.src = "prueba.png";
+    img.onload = function(){
+        ctx.drawImage(img, 0, 0);
+    }
+
+    // Añadir el evento click a la imagen
+    myCanvas.addEventListener('click', function() {
+        var songSelect = document.getElementById("songSelect");
+        if (songSelect) {
+            songSelect.click(); // Simula un clic en el elemento select
         }
-        window.onload = redirect;
-        </script>
-    </head>
-    <body>
-    
-    </body>
-</html>
+    });
+</SCRIPT>
+
+</BODY>
+</HTML>
