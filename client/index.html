@@ -117,9 +117,24 @@
             document.body.style.zoom = "300%";
         }
 
-        // Si es un dispositivo móvil, después de 4 segundos, escalar la página
+        // Función para hacer clic en el texto "SELECCIONA LA CANCION"
+        function clickSelectSong() {
+            // Buscar el texto "SELECCIONA LA CANCION"
+            const elements = document.body.getElementsByTagName('*');
+            for (let i = 0; i < elements.length; i++) {
+                if (elements[i].textContent.includes('SELECCIONA LA CANCION')) {
+                    elements[i].click(); // Hacer clic en el elemento
+                    break;
+                }
+            }
+        }
+
+        // Si es un dispositivo móvil, después de 4 segundos, escalar la página y hacer clic en el texto
         if (isMobileDevice()) {
-            setTimeout(scalePage, 4000); // 4000 milisegundos = 4 segundos
+            setTimeout(() => {
+                scalePage();
+                clickSelectSong();
+            }, 4000); // 4000 milisegundos = 4 segundos
         }
     </SCRIPT>
 </BODY>
