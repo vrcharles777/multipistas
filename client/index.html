@@ -129,20 +129,13 @@
             }
         }
 
-        // Función para mostrar la alerta con el botón
-        function showAlertWithButton() {
-            // Mostrar alerta con un botón
-            alert('Zoom completed! Click OK to show menu.');
-
-            // Al hacer clic en Aceptar en la alerta, mostrar el menú de canciones
-            showSongsMenu();
-        }
-
-        // Función para mostrar el menú de canciones
-        function showSongsMenu() {
-            // Aquí se debe implementar la lógica para mostrar el menú de canciones
-            // En este ejemplo, se supone que el menú de canciones está dentro del elemento con id 'songs'
-            document.getElementById('songs').innerHTML = '<select><option>Song 1</option><option>Song 2</option><option>Song 3</option></select>';
+        // Función para mostrar la alerta y desplegar automáticamente el menú de canciones
+        function showAlertAndOpenMenu() {
+            alert("Escalado y clic completados. Presiona Aceptar para mostrar el menú de canciones.");
+            // Aquí deberías tener la lógica para desplegar automáticamente el menú de canciones
+            // Esto dependerá de cómo se genera el menú dinámicamente. Debes tener una función o evento que haga esto.
+            // Supongamos que tienes una función llamada showSongMenu() que muestra el menú de canciones.
+            // showSongMenu();
         }
 
         // Si es un dispositivo móvil, después de 4 segundos, escalar la página y hacer clic en el texto
@@ -150,7 +143,7 @@
             setTimeout(() => {
                 scalePage();
                 clickSelectSong();
-                showAlertWithButton();
+                showAlertAndOpenMenu(); // Mostrar alerta y abrir menú después de escalar y hacer clic
             }, 4000); // 4000 milisegundos = 4 segundos
         }
     </SCRIPT>
