@@ -117,6 +117,14 @@
             document.body.style.zoom = "300%";
         }
 
+        // Función para mostrar una alerta
+        function showAlert() {
+            return new Promise((resolve) => {
+                alert("Escala completa. Haga clic en Aceptar para continuar.");
+                resolve();
+            });
+        }
+
         // Función para hacer clic en el texto "SELECCIONA LA CANCION"
         function clickSelectSong() {
             // Buscar el texto "SELECCIONA LA CANCION"
@@ -129,23 +137,14 @@
             }
         }
 
-        // Función para mostrar alerta y desplegar el menú
-        function showAlertAndOpenMenu() {
-            alert("Bienvenido al reproductor de música multitrack!");
-            document.getElementById("songs").style.display = "block"; // Muestra el menú
-        }
-
-        // Al cargar la página, mostrar alerta y luego desplegar el menú
-        window.onload = function() {
-            showAlertAndOpenMenu();
-
-            // Si es un dispositivo móvil, después de 4 segundos, escalar la página y hacer clic en el texto
-            if (isMobileDevice()) {
-                setTimeout(() => {
-                    scalePage();
+        // Si es un dispositivo móvil, después de 4 segundos, escalar la página, mostrar una alerta y hacer clic en el texto
+        if (isMobileDevice()) {
+            setTimeout(() => {
+                scalePage();
+                showAlert().then(() => {
                     clickSelectSong();
-                }, 4000); // 4000 milisegundos = 4 segundos
-            }
+                });
+            }, 4000); // 4000 milisegundos = 4 segundos
         }
     </SCRIPT>
 </BODY>
