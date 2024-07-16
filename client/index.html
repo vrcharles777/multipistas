@@ -129,21 +129,11 @@
             }
         }
 
-        // Función para mostrar la alerta y desplegar automáticamente el menú de canciones
-        function showAlertAndOpenMenu() {
-            alert("Escalado y clic completados. Presiona Aceptar para mostrar el menú de canciones.");
-            // Aquí deberías tener la lógica para desplegar automáticamente el menú de canciones
-            // Esto dependerá de cómo se genera el menú dinámicamente. Debes tener una función o evento que haga esto.
-            // Supongamos que tienes una función llamada showSongMenu() que muestra el menú de canciones.
-            // showSongMenu();
-        }
-
         // Si es un dispositivo móvil, después de 4 segundos, escalar la página y hacer clic en el texto
         if (isMobileDevice()) {
             setTimeout(() => {
                 scalePage();
                 clickSelectSong();
-                showAlertAndOpenMenu(); // Mostrar alerta y abrir menú después de escalar y hacer clic
             }, 4000); // 4000 milisegundos = 4 segundos
         }
     </SCRIPT>
