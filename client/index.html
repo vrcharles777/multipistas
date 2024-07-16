@@ -117,14 +117,6 @@
             document.body.style.zoom = "300%";
         }
 
-        // Función para mostrar una alerta
-        function showAlert() {
-            return new Promise((resolve) => {
-                alert("Escala completa. Haga clic en Aceptar para continuar.");
-                resolve();
-            });
-        }
-
         // Función para hacer clic en el texto "SELECCIONA LA CANCION"
         function clickSelectSong() {
             // Buscar el texto "SELECCIONA LA CANCION"
@@ -137,13 +129,28 @@
             }
         }
 
-        // Si es un dispositivo móvil, después de 4 segundos, escalar la página, mostrar una alerta y hacer clic en el texto
+        // Función para mostrar la alerta con el botón
+        function showAlertWithButton() {
+            // Mostrar alerta con un botón
+            alert('Zoom completed! Click OK to show menu.');
+
+            // Al hacer clic en Aceptar en la alerta, mostrar el menú de canciones
+            showSongsMenu();
+        }
+
+        // Función para mostrar el menú de canciones
+        function showSongsMenu() {
+            // Aquí se debe implementar la lógica para mostrar el menú de canciones
+            // En este ejemplo, se supone que el menú de canciones está dentro del elemento con id 'songs'
+            document.getElementById('songs').innerHTML = '<select><option>Song 1</option><option>Song 2</option><option>Song 3</option></select>';
+        }
+
+        // Si es un dispositivo móvil, después de 4 segundos, escalar la página y hacer clic en el texto
         if (isMobileDevice()) {
             setTimeout(() => {
                 scalePage();
-                showAlert().then(() => {
-                    clickSelectSong();
-                });
+                clickSelectSong();
+                showAlertWithButton();
             }, 4000); // 4000 milisegundos = 4 segundos
         }
     </SCRIPT>
